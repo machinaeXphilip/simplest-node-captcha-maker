@@ -1,3 +1,9 @@
-const captchaMaker = require('./index.js');
+const {captchaMaker} = require('./index.js');
 
-let captcha = captchaMaker.drawTextToCaptcha('1234!')
+(async function(){
+  let captcha = new captchaMaker({width:180,height:40,fontpath:'Roboto_Mono/static/RobotoMono-ExtraLight.ttf'});
+  await captcha.init()
+
+  let datauri = await captcha.getRandomCaptcha();
+  console.log(datauri);
+}())
