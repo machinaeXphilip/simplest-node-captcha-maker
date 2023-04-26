@@ -1,4 +1,4 @@
-const {captchaMaker} = require('./index.js');
+import { captchaMaker } from "./index.js";
 
 (async function(){
   let captcha = new captchaMaker({width:180,height:40,fontpath:'Roboto_Mono/static/RobotoMono-ExtraLight.ttf'});
