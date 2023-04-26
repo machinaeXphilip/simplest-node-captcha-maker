@@ -11,5 +11,8 @@
   "dependencies": {
     "pureimage": "^0.3.17",
     "sharp": "^0.32.0"
+  },
+  "devDependencies": {
+    "generate-license-file": "^2.0.0"
   }
 }
