@@ -5,3 +5,18 @@ After hitting a wall with [an issue with node-canvas on some OS']() i discovered
 I got inspired by the [Captcha-Validator](https://github.com/makeuseofcode/CAPTCHA-Validator) project.
 
 This creates not a safe captcha (yet) but a fairly easy to read captcha, by painting it on a virtual canvas and returns it as base64 datauri which could be send to frontends. To make it harder for robots to read, some more visual action needs to go on of course. This is meant more as a starting point.
+
+## Usage
+
+```js
+import { captchaMaker } from "./index.js"; // es6
+// const { captchaMaker } = require("./index.js"); // commonjs
+
+(async function(){
+  let captcha = new captchaMaker({width:180,height:40,fontpath:'Roboto_Mono/static/RobotoMono-ExtraLight.ttf'});
+  await captcha.init()
+
+  let datauri = await captcha.getRandomCaptcha();
+  console.log(datauri);
+}())
+```
